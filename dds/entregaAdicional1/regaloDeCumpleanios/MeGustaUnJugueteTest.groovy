@@ -1,4 +1,4 @@
-package regaloDeCumpleanios.caso1;
+package regaloDeCumpleanios;
 
 import org.junit.*;
 
