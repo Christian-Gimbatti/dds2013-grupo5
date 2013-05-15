@@ -8,7 +8,10 @@ class Regalo {
 		this.juguete	
 	}
 	
-	def boolean esRopa() {}
+	def boolean esRopa() {
+		this.ropa
+	}
+	
 	def double getValor() {}
 	def Date getFechaDeEntrega() {}
 	
