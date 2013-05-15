@@ -30,7 +30,7 @@ class MeGustaUnJugeteTest {
 		Assert.assertFalse(unaPersona.esteRegaloTmbMeGusta(unRegalo))
 	}
 	
-	//MIXINS(aprovecho la secuencia de los test)
+	//MIXINS
 	
 	@Test //Y ahora si le gusta el regalo que antes no le gusto(indeciso), pero a la otraPersona no le gusta(sin cambiarle el comportamiento)
 	def void esteOtroRegaloSiEsJugueteTmbLeGustaAUnaPersona() {
@@ -40,16 +40,9 @@ class MeGustaUnJugeteTest {
 		def otraPersona = new Persona()// Verifico que la clase original no es modificada
 		Assert.assertFalse(otraPersona.esteRegaloTmbMeGusta(unRegalo))
 		
-	}
-	
-	//VERIFICO QUE PUEDO CONTINUAR CON EL MIXIN CAMBIANDO COMPORTAMIENTO
-	
-	@Test //Finalmente no le gusta y ya no lo quiere
-	def void ySiAhoraNoLeGustaNada() {
+		//Finalmente no le gusta y ya no lo quiere, piso con mixin el comportamiento modificado del original, osea -> lo vuelvo a modificar
 		unaPersona.metaClass {mixin(PersonaQueNoLeGustaNingunRegalo)}
-		Assert.assertFalse(unaPersona.esteRegaloTmbMeGusta(unRegalo))
-		
+		Assert.assertFalse(otraPersona.esteRegaloTmbMeGusta(unRegalo))
 	}
-	
-	
+		
 }
